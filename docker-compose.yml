@@ -1,0 +1,16 @@
+services:
+  crafty:
+    container_name: crafty_container
+    image: registry.gitlab.com/crafty-controller/crafty-4:latest
+    restart: always
+    environment:
+      - TZ=America/Mexico_City # Sets the container time zone for accurate logs
+    ports:
+      - "8443:8443" # Crafty Web Dashboard (HTTPS)
+      - "25565:25565" # Default Minecraft Java Ports
+    volumes:
+      - ./crafty/backups:/app/crafty-4/backups
+      - ./crafty/config:/app/crafty-4/app/config
+      - ./crafty/import:/app/crafty-4/import
+      - ./crafty/logs:/app/crafty-4/logs
+      - ./crafty/servers:/app/crafty-4/servers
