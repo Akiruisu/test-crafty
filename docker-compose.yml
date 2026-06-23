@@ -4,7 +4,7 @@ services:
     image: registry.gitlab.com/crafty-controller/crafty-4:latest
     restart: always
     environment:
-      - TZ=America/Mexico_City 
+      - TZ=America/Mexico_City
     ports:
       - "8443:8443" # Crafty Web Dashboard (HTTPS)
       - "25565:25565" # Default Minecraft Java Ports
